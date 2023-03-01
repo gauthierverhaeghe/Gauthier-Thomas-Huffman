@@ -18,7 +18,12 @@ def mettre_ordre_croissant(dictionnaire):
 
 dico = compter_lettre('aaaaaaaaaaaaaaaaaahghghghghghghghghjhuijh')
 print(dico)
+print(type(dico))
 liste = mettre_ordre_croissant(dico)
+print(liste)
+
+for i in liste:
+    print(i[1])
 
 class BT:
 
@@ -35,11 +40,24 @@ class BT:
     def __repr__(self) -> str:
         return f'([{self.freq} - {self.char}], {repr(self.left)}, {repr(self.right)})'
 
-def créer_arbre(liste):
-    arbre = BT
-    racine = liste[0][1]/liste
+def nouveau_noeud():
+    pass
+
+def noeud():
+    pass
 
 
-
-
-
+def Huffman(liste):
+    liste = compter_lettre(liste)
+    n = len(liste)
+    Q = mettre_ordre_croissant(liste)
+    for i in range(n):
+        V = noeud(liste[i])
+        Q.append(V)
+    while len(Q) != 1:
+        Z = nouveau_noeud()
+        Z.left = x = Q.pop()
+        Z.right = y = Q.pop()
+        Z.frequency = x.frequency + y.frequency
+        Q.append(Z)
+    return Q
