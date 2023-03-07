@@ -1,6 +1,10 @@
 from collections import Counter
 import heapq
 
+'''
+https://www.programiz.com/dsa/huffman-coding#:~:text=Huffman%20coding%20first%20creates%20a,concept%20of%20prefix%20code%20ie.
+'''
+
 def compter_lettre(texte:str)->dict:
     return Counter(texte)
 
@@ -22,8 +26,6 @@ print(type(dico))
 liste = mettre_ordre_croissant(dico)
 print(liste)
 
-for i in liste:
-    print(i[1])
 
 class BT:
 
@@ -34,12 +36,30 @@ class BT:
         self.left = None
         self.right = None
 
+    def ajouter_droit:
+        pass
+    def ajouter_gauche:
+        pass
+        
     def __lt__(self, other) -> bool:
         return self.freq < other.freq
 
     def __repr__(self) -> str:
         return f'([{self.freq} - {self.char}], {repr(self.left)}, {repr(self.right)})'
 
+
+def liste_de_feuille(liste):
+    new_liste = []
+    for i in liste:
+        new_liste.append((i,None ,None))
+    return new_liste    
+
+print(liste_de_feuille(liste))
+
+def arbre_huffman(liste):
+
+
+'''
 def nouveau_noeud():
     pass
 
@@ -54,6 +74,7 @@ def Huffman(liste):
     for i in range(n):
         V = noeud(liste[i])
         Q.append(V)
+
     while len(Q) != 1:
         Z = nouveau_noeud()
         Z.left = x = Q.pop()
@@ -61,3 +82,4 @@ def Huffman(liste):
         Z.frequency = x.frequency + y.frequency
         Q.append(Z)
     return Q
+'''
