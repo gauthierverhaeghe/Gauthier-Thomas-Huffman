@@ -56,15 +56,15 @@ def build_encoding_table(arbre):
     '''construire un dictionnaire des caractères et de leur encodage Huffman à partir d'un arbre de Huffman'''
     table_encodage = {}
     pile = [(arbre, '')]
-    #On dépile un nœud et son encodage de la pile tant qu'il y a des nœuds dans la pile
+    #On dépile un noeud et son encodage de la pile tant qu'il y a des nœuds dans la pile
     while pile:
         noeud, encodage = pile.pop()
-        #Si le nœud est une feuille (c'est-à-dire qu'il correspond à un caractère), on ajoute l'encodage correspondant au dictionnaire des encodages
+        #Si le noeud est une feuille (c'est-à-dire qu'il correspond à un caractère), on ajoute l'encodage correspondant au dictionnaire des encodages
         if noeud.char is not None:
             table_encodage[noeud.char] = encodage
 
-        #Si le nœud a un fils gauche, on empile le fils gauche avec son propre encodage (qui est l'encodage actuel + 0)
-        #Si le nœud a un fils droit, on empile le fils droit avec son propre encodage (qui est l'encodage actuel + 1)
+        #Si le noeud a un fils gauche, on empile le fils gauche avec son propre encodage (qui est l'encodage actuel + 0)
+        #Si le noeud a un fils droit, on empile le fils droit avec son propre encodage (qui est l'encodage actuel + 1)
 
         if noeud.gauche is not None:
             pile.append((noeud.gauche, encodage + '0'))
@@ -82,7 +82,7 @@ def encode(texte, table_encodage):
     return texte_encodé
 
 def decode(texte, arbre):
-    # Vérifier que l'arbre est bien un objet BinaryTree
+    # Vérifie que l'arbre est bien un objet BinaryTree
     if not isinstance(arbre, BinaryTree):
         raise TypeError("L'arbre doit être un objet BinaryTree")
     
